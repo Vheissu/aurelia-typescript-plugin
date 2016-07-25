@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "TypeScript based plugin structure for Aurelia plugins.",
   "main": "dist/index.js",
-  "typings": "dist/typings.d.ts",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "test": "./node_modules/.bin/karma start karma.conf.js --single-run"
   },
