@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "target": "es2015",
+    "module": "es2015",
+    "listFiles": true,
+    "moduleResolution": "node",
+    "stripInternal": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "preserveConstEnums": true,
+    "lib": ["es2015", "dom"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "custom_typings/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "compileOnSave": true,
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}

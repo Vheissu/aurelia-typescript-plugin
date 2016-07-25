@@ -1,0 +1,37 @@
+{
+  "name": "aurelia-typescript-plugin",
+  "version": "1.0.0",
+  "description": "TypeScript based plugin structure for Aurelia plugins.",
+  "main": "dist/index.js",
+  "typings": "dist/typings.d.ts",
+  "scripts": {
+    "test": "./node_modules/.bin/karma start karma.conf.js --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vheissu/aurelia-typescript-plugin.git"
+  },
+  "keywords": [
+    "skeleton",
+    "plugin",
+    "aurelia"
+  ],
+  "author": "Dwayne Charrington <dwaynecharrington@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vheissu/aurelia-typescript-plugin/issues"
+  },
+  "homepage": "https://github.com/Vheissu/aurelia-typescript-plugin#readme",
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-preset-es2015": "^6.9.0",
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.5.2",
+    "jasmine-core": "^2.4.1",
+    "karma": "^1.1.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-typescript-preprocessor": "^0.2.1",
+    "typescript": "^2.1.0-dev.20160724"
+  }
+}

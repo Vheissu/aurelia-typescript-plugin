@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "rootDir": "src",
+    "outFile": "__temp/dts/typings.js",
+    "inlineSourceMap": true,
+    "target": "es2015",
+    "module": "amd",
+    "moduleResolution": "node",
+    "declaration": true,
+    "stripInternal": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noEmitOnError": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "preserveConstEnums": true,
+    "lib": ["es2015", "dom"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "custom_typings/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "compileOnSave": true,
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}
