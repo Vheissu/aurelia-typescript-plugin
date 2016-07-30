@@ -7,7 +7,7 @@ import shell from 'gulp-shell';
 import sourcemaps from 'gulp-sourcemaps';
 
 const assetPatterns = ["./src/**/*.html", "./*.css", "./src/**/*.json"];
-const sassStyles = "./styles/**/*.scss";
+const sassStyles = ["./styles/**/*.scss", "./src/**/*.scss"];
 const typescriptPattern = "./src/**/*.ts";
 const destination = "dist";
 
@@ -90,7 +90,7 @@ gulp.task("watch", () => {
  */
 gulp.task('tsc', ["cleanup"], shell.task([
     "tsc --project tsconfig.json",
-    "tsc --project tsconfig.es2015",
+    "tsc --project tsconfig.es2015.json",
     "tsc --project tsconfig.system.json",
     "tsc --project tsconfig.amd.json"
 ]));
