@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist/es2015",
+    "sourceMap": true,
+    "target": "es5",
+    "module": "system",
+    "declaration": true,
+    "listFiles": true,
+    "moduleResolution": "node",
+    "stripInternal": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "preserveConstEnums": true,
+    "lib": ["es2015", "dom"]
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test"
+  ],
+  "compileOnSave": true,
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}
