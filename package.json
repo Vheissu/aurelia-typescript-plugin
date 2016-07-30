@@ -2,8 +2,8 @@
   "name": "aurelia-typescript-plugin",
   "version": "1.0.0",
   "description": "TypeScript based plugin structure for Aurelia plugins.",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist/commonjs/index.js",
+  "typings": "dist/commonjs/index.d.ts",
   "scripts": {
     "test": "./node_modules/.bin/karma start karma.conf.js --single-run"
   },
