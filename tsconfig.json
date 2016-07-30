@@ -15,13 +15,10 @@
     "preserveConstEnums": true,
     "lib": ["es2015", "dom"]
   },
-  "include": [
-    "src/**/*.ts",
-    "custom_typings/**/*.d.ts"
-  ],
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "test"
   ],
   "compileOnSave": true,
   "atom": {
