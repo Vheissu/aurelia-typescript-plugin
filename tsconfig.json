@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "outDir": "dist",
+    "outDir": "dist/commonjs",
     "sourceMap": true,
     "target": "es5",
     "module": "commonjs",
