@@ -89,10 +89,10 @@ gulp.task("watch", () => {
  * 
  */
 gulp.task('tsc', ["cleanup"], shell.task([
-    "tsc --project tsconfig.json"
-    //"tsc --project tsconfig.dts.json",
-    //"cp __temp/dts/typings.d.ts dist/",
-    //"gulp remove-temp"
+    "tsc --project tsconfig.json",
+    "tsc --project tsconfig.es2015",
+    "tsc --project tsconfig.system.json",
+    "tsc --project tsconfig.amd.json"
 ]));
 
 gulp.task("default", ["tsc", "compile-sass", "copy-assets", "watch"]);
