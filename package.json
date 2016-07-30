@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/Vheissu/aurelia-typescript-plugin#readme",
   "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-preset-es2015": "^6.9.0",
     "del": "^2.2.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
