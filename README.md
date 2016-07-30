@@ -32,3 +32,17 @@ This means when you import using the above format of which you might notice is h
 
 ## Webpack Support
 If you want your module to work appropriately with Aurelia and Webpack, ensure you define in your `package.json` an Aurelia build resources map so the compiler knows where each file lives. This makes it easier for the end user consuming your package to use it without issue.
+
+## Aurelia CLI Support
+This plugin skeleton exports an AMD module format which the Aurelia CLI currently consumes.
+
+```
+"dependencies": [
+  {
+    "name": "my-cool-package",
+    "path": "../node_modules/my-cool-package/dist/amd",
+    "main": "somefile",
+    "env": "dev"
+  }
+]
+```
