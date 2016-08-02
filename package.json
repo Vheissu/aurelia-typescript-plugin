@@ -37,7 +37,7 @@
     "karma-typescript-preprocessor": "^0.2.1",
     "node-sass": "^3.8.0",
     "sassdoc": "^2.1.20",
-    "typescript": "^2.1.0-dev.20160724"
+    "typescript": "^2.1.0-dev.20160801"
   },
   "dependencies": {
    "@types/jasmine": "^2.2.30"

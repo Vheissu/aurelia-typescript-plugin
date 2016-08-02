@@ -17,19 +17,7 @@ const destination = "dist";
  */
 gulp.task('cleanup', () => {
     return del([
-        "dist/**",
-        "__temp"
-    ]);
-});
-
-/**
- * Remove the temporary directory where we
- * are creating our definition files
- * 
- */
-gulp.task("remove-temp", () => {
-    return del([
-        "__temp"
+        "dist/**"
     ]);
 });
 
@@ -81,6 +69,18 @@ gulp.task("watch", () => {
     gulp.watch(typescriptPattern, ["tsc"]);
     gulp.watch(sassStyles, ["compile-sass"]);
     gulp.watch(assetPatterns, ["copy-assets"]);
+});
+
+/**
+ * Copy the definition file from AMD to the dist
+ * folder
+ * 
+ */
+gulp.task("copy-definition-file", () => {
+    return gulp
+        .src('dist/amd/index.d.ts')
+        .pipe(gulp.dest(destination))
+
 });
 
 /**
