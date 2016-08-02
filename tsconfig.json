@@ -1,15 +1,17 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",  
     "allowSyntheticDefaultImports": true,
     "outDir": "dist/commonjs",
     "sourceMap": true,
     "target": "es5",
     "module": "commonjs",
-    "declaration": true,
-    "listFiles": true,
     "moduleResolution": "node",
+    "declaration": true,
     "stripInternal": true,
+    "noImplicitAny": false,
     "removeComments": true,
+    "noEmitOnError": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "preserveConstEnums": true,
@@ -18,7 +20,7 @@
   "exclude": [
     "node_modules",
     "dist",
-    "test"
+    "doc"
   ],
   "compileOnSave": true,
   "atom": {
