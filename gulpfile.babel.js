@@ -78,7 +78,7 @@ gulp.task("watch", () => {
  */
 gulp.task("copy-definition-file", () => {
     return gulp
-        .src('dist/amd/index.d.ts')
+        .src(['dist/amd/index.d.ts'])
         .pipe(gulp.dest(destination))
 
 });
@@ -94,5 +94,7 @@ gulp.task('tsc', ["cleanup"], shell.task([
     "tsc --project tsconfig.system.json",
     "tsc --project tsconfig.amd.json"
 ]));
+
+gulp.task('build', ["tsc", "compile-sass", "copy-assets", "copy-definition-file"]);
 
 gulp.task("default", ["tsc", "compile-sass", "copy-assets", "watch"]);

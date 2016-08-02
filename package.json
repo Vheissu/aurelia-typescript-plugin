@@ -5,6 +5,7 @@
   "main": "dist/commonjs/index.js",
   "typings": "dist/commonjs/index.d.ts",
   "scripts": {
+    "build": "gulp build",  
     "test": "./node_modules/.bin/karma start karma.conf.js --single-run"
   },
   "repository": {
