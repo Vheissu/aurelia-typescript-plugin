@@ -43,5 +43,15 @@
   },
   "dependencies": {
     "@types/jasmine": "^2.2.30"
+  },
+  "jspm": {
+    "registry": "npm",
+    "main": "index",
+    "format": "cjs",
+    "directories": {
+      "dist": "dist/commonjs"
+    },
+    "dependencies": {},
+    "devDependencies": {}
   }
 }
