@@ -3,7 +3,7 @@
     "baseUrl": ".",  
     "allowSyntheticDefaultImports": true,
     "outDir": "dist/amd",
-    "outFile": "dist/amd/aurelia-configuration.js",
+    "outFile": "dist/amd/index.js",
     "sourceMap": true,
     "target": "es5",
     "module": "amd",
