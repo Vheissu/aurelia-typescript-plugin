@@ -2,10 +2,16 @@
 A plugin skeleton for creating Aurelia plugins.
 
 ## Supported
-- Sass for styling with Autoprefixer for cross-browser style prefixes
-- Multiple module formats: commonjs, es2015, system and amd.
-- Write plugins in TypeScript
-- Definition files automatically generated using the TypeScript native compiler
+- [ x ] Sass for styling with Autoprefixer for cross-browser style prefixes
+- [ x ] Multiple module formats: commonjs, es2015, system and amd.
+- [ x ] Write plugins in TypeScript
+- [ x ] Definition files automatically generated using the TypeScript native compiler
+
+## Todo
+- [ ] Implement testing
+- [ ] Implement code coverage
+- [ ] Implement better linting
+- [ ] Better definition generation and singular index.js export strategy
 
 ## Structure
 - `src` this is where your `.ts` files go. They get compiled into the respective `dist` folders for each module type.
