@@ -9,6 +9,7 @@ A plugin skeleton for creating Aurelia plugins.
 
 ## Todo
 - [ ] Implement testing
+- [ ] Implement support for Wallaby.js
 - [ ] Implement code coverage
 - [ ] Implement better linting
 - [ ] Better definition generation and singular index.js export strategy
