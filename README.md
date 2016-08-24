@@ -2,7 +2,7 @@
 A plugin skeleton for creating Aurelia plugins.
 
 ## Supported
-- Sass for styling with CSSNano and Autoprefixer for cross-browser style prefixes
+- Sass for styling with Autoprefixer for cross-browser style prefixes
 - Multiple module formats: commonjs, es2015, system and amd.
 - Write plugins in TypeScript
 - Definition files automatically generated using the TypeScript native compiler
