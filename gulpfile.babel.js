@@ -66,7 +66,7 @@ gulp.task("watch", () => {
  */
 gulp.task("copy-definition-file", () => {
     return gulp
-        .src(['dist/amd/*.d.ts'])
+        .src(['./typings.d.ts'])
         .pipe(concat('index.d.ts'))
         .pipe(gulp.dest('dist'))
 
