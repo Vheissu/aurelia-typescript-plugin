@@ -55,7 +55,10 @@
   },
   "aurelia": {
       "build": {
-          "resources": []
+          "resources": [],
+          "moduleRootOverride": {
+              "aurelia-typescript-plugin": "dist/es2015"
+          }
       }
   }
 }
