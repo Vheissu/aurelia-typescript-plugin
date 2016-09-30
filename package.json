@@ -42,5 +42,15 @@
     "run-sequence": "^1.2.2",
     "typescript": "^2.1.0-dev.20160929"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "jspm": {
+    "registry": "npm",
+    "main": "index",
+    "format": "cjs",
+    "directories": {
+      "dist": "dist/commonjs"
+    },
+    "dependencies": {},
+    "devDependencies": {}
+  }
 }
