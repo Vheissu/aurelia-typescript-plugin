@@ -52,5 +52,10 @@
     },
     "dependencies": {},
     "devDependencies": {}
+  },
+  "aurelia": {
+      "build": {
+          "resources": []
+      }
   }
 }
