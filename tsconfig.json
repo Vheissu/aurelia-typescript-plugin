@@ -1,29 +1,27 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",  
-    "allowSyntheticDefaultImports": true,
-    "outDir": "dist/es2015",
-    "sourceMap": true,
-    "target": "es2015",
-    "module": "es2015",
+    "module": "amd",
     "moduleResolution": "node",
+    "target": "es5",
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "outDir": "dist/test",
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "strictNullChecks": true,
     "declaration": true,
-    "stripInternal": true,
-    "noImplicitAny": false,
-    "removeComments": true,
-    "noEmitOnError": false,
-    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
-    "preserveConstEnums": true,
-    "lib": ["es2015", "dom"]
+    "noEmitHelpers": false
   },
   "exclude": [
-    "node_modules",
+    ".vscode",
     "dist",
-    "doc"
-  ],
-  "compileOnSave": true,
-  "atom": {
-    "rewriteTsconfig": false
-  }
+    "doc",
+    "node_modules"
+  ]
 }
