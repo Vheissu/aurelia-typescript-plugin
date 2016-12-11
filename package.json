@@ -1,7 +1,13 @@
 {
-  "name": "aurelia-typescript-plugin",
-  "version": "1.0.0",
-  "description": "TypeScript based plugin structure for Aurelia plugins.",
+  "name": "aurelia-tabs",
+  "version": "1.0.3",
+  "description": "A dependency free tabs component for your Aurelia applications.",
+  "keywords": [
+    "aurelia",
+    "plugin",
+    "tabs",
+    "tabbed"
+  ],
   "main": "dist/commonjs/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -26,19 +32,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vheissu/aurelia-typescript-plugin.git"
+    "url": "http://github.com/Vheissu/aurelia-tabs"
   },
-  "keywords": [
-    "skeleton",
-    "plugin",
-    "aurelia"
-  ],
   "author": "Dwayne Charrington <dwaynecharrington@gmail.com>",
   "license": "MIT",
+  "homepage": "https://github.com/Vheissu/aurelia-tabs",
   "bugs": {
-    "url": "https://github.com/Vheissu/aurelia-typescript-plugin/issues"
+    "url": "https://github.com/Vheissu/aurelia-tabs/issues"
   },
-  "homepage": "https://github.com/Vheissu/aurelia-typescript-plugin#readme",
   "jspm": {
     "registry": "npm",
     "jspmPackage": true,

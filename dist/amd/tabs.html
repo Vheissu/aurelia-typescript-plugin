@@ -1,0 +1,6 @@
+<template>
+    <require from="styles/tabs.css"></require>
+    <ul class="tabs">
+        <li class="tabs__tab ${tab.selected ? 'tabs__tab--selected' : ''}" repeat.for="tab of tabs"><a href="#${tab.id}" class="tabs__tab__inner">${tab.label}</a></li>
+    </ul>
+</template>

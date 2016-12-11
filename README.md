@@ -1,36 +1,84 @@
-# aurelia-typescript-plugin
-A plugin skeleton for creating Aurelia plugins. This plugin is based off of some code from the official Aurelia setup used for newer plugins written in TypeScript. It strenghtens upon ideas from my original plugin, with less bloat.
+# Aurelia Tabs
+A dependency free tabs component for your Aurelia applications. Allows you to toggle between sections of content, with supports for dynamically composing views with optional data.
 
-## Supported
-- [x] Multiple module formats: commonjs, es2015, system and amd.
-- [x] Write plugins in TypeScript
-- [x] Definition files automatically generated using the TypeScript native compiler
-- [x] Implement testing
-- [x] Implement better linting
-- [x] Better definition generation and singular index.js export strategy
-
-## Todo
-- [ ] Implement support for Wallaby.js
-- [ ] Implement code coverage
-
-## Structure
-- `src` this is where your `.ts` files go. They get compiled into the respective `dist` folders for each module type.
-- `dist` automatically transpiled/generated modules go in here, don't edit anything here.
-- `styles` the root styles directory is where your styles go. These are then put into the `dist` folder so your modules can include/reference any styles.
-
-## Webpack Support
-If you want your module to work appropriately with Aurelia and Webpack, ensure you define in your `package.json` an Aurelia build resources map so the compiler knows where each file lives. This makes it easier for the end user consuming your package to use it without issue.
-
-## Aurelia CLI Support
-This plugin skeleton exports an AMD module format which the Aurelia CLI currently consumes.
-
+## Installation
+1. In your console type: ``npm install aurelia-tabs --save`` or for Jspm: ``jspm install aurelia-tabs``
+2. During the bootstrapping phase, register the plugin:
 ```
-"dependencies": [
-  {
-    "name": "my-cool-package",
-    "path": "../node_modules/my-cool-package/dist/amd",
-    "main": "somefile",
-    "env": "dev"
-  }
-]
+export function configure(aurelia) {
+  aurelia.use
+    .standardConfiguration()
+    .plugin('aurelia-tabs')
+    .developmentLogging();
+
+  aurelia.start().then(a => a.setRoot());
+}
 ```
+
+## Usage
+This plugin is comprised of multiple components to be used together.
+
+### Tabs
+The tabs component is where your clickable tabs are generated. It has two bindable values, one of which is required ``tabs``
+
+#### Valid data
+Passing through tabs to your object they need to be defined in a standardised way. The plugin expects an array of one or more objects which contain at least a ``id`` property and a ``label`` property. The ``id`` property is used to identify which section this tab will open as defined in the sections element. The ``label`` property is the value displayed to the user. A third optional property ``selected`` allows us to specify if this tab is the default selected tab.
+
+**In your ViewModel**:
+```
+export class ViewModel {
+    constructor() {
+        this.myTabValues = [
+            {id: 'section-one', label: 'My First Section', selected: true},
+            {id: 'section-two', label: 'Users'},
+            {id: 'section-three', label: 'Browse Items'}
+        ];
+    }
+}
+```
+
+**In your View:**
+``<tabs tabs.bind="myTabValues"></tabs>``
+
+### Tab Sections
+Once you have your tabs setup, you will want to create tab sections which wrap tab-section items. We will use the example above and add in the sections related to each defined tab.
+
+**In your ViewModel**:
+```
+export class ViewModel {
+    constructor() {
+        this.myTabValues = [
+            {id: 'section-one', label: 'My First Section', selected: true},
+            {id: 'section-two', label: 'Users'},
+            {id: 'section-three', label: 'Browse Items'}
+        ];
+    }
+}
+```
+
+**In your View:**
+```
+<tabs tabs.bind="myTabValues"></tabs>
+
+<tab-sections>
+
+</tab-sections>
+```
+
+We have a basic skeleton tab application, but no tabs to switch between. Lets add some individual tab sections now.
+
+**In your View:**
+```
+<tabs tabs.bind="myTabValues"></tabs>
+
+<tab-sections>
+    <tab-section section="section-one">
+        <h1>Hello</h1>
+        <p>This is some basic HTML content within a tab section.</p>
+    </tab-section>
+    <tab-section section="section-two" view-model="myViewModel"></tab-section>
+    <tab-section section="section-two" view-model="myViewModel" view-content="myViewContent"></tab-section>
+</tab-sections>
+```
+
+You can see we used the ``<tab-section>`` attribute three different ways. The first we just specified some content right between the opening and closing tabs. The second we specified a property called ``view-model`` which allows us to dynamically render a ViewModel using the ``<compose>`` element and lastly, we do the same thing but pass through an object of data (like we would to the ``<compose>`` element).
