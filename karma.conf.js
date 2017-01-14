@@ -5,10 +5,9 @@ module.exports = function(config) {
     frameworks: ['jasmine', 'requirejs'],
 
     files: [
-      'dist/test/test/main.js',
-      { pattern: 'dist/test/**/*.js', included: false, watched: true },
-      //{ pattern: 'dist/test/**/*.html', included: false, watched: true },
-      { pattern: 'node_modules/**/*.js', included: false, watched: false },
+        'test/test.main.js',
+        { pattern: 'dist/test/**/*.js', included: false, watched: true },
+        { pattern: 'node_modules/**/*.js', included: false, watched: false },
     ],
 
     exclude: [
