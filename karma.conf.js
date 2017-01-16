@@ -5,7 +5,7 @@ module.exports = function(config) {
     frameworks: ['jasmine', 'requirejs'],
 
     files: [
-        'test/test.main.js',
+        'dist/test/test/main.js',
         { pattern: 'dist/test/**/*.js', included: false, watched: true },
         { pattern: 'node_modules/**/*.js', included: false, watched: false },
     ],
