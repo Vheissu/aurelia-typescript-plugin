@@ -1,5 +1,5 @@
 let allTestFiles: string[] = [];
-let TEST_REGEXP = /^\/base\/dist\/test\/test\/(?:unit|fixtures)\/[^\/]+\.js$/i;
+let TEST_REGEXP = /^\/base\/dist\/test\/test\/(?:unit)\/[^\/]+\.js$/i;
 
 interface Window {
   __karma__: any;
