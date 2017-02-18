@@ -8,7 +8,7 @@
     "aurelia"
   ],
   "main": "dist/commonjs/index.js",
-  "typings": "dist/index.d.ts",
+  "typings": "dist/commonjs/index.d.ts",
   "scripts": {
     "lint": "cross-env tslint --project tsconfig.json",
     "pretest": "cross-env npm run lint",
@@ -23,11 +23,18 @@
     "prebuild:es2015": "cross-env rimraf dist/es2015 && node-sass src --output dist/es2015 && postcss --use autoprefixer dist/es2015/*.css -d dist/es2015",
     "build:es2015": "cross-env tsc --project tsconfig.build.json --outDir dist/es2015 --module es2015",
     "postbuild:es2015": "cross-env copyfiles --up 1 src/**/*.html src/**/*.css dist/es2015",
+    "prebuild:native-modules": "cross-env rimraf dist/native-modules && node-sass src --output dist/native-modules && postcss --use autoprefixer dist/native-modules/*.css -d dist/native-modules",
+    "build:native-modules": "cross-env tsc --project tsconfig.build.json --outDir dist/native-modules --module es2015",
+    "postbuild:native-modules": "cross-env copyfiles --up 1 src/**/*.html src/**/*.css dist/native-modules",
     "prebuild:system": "cross-env rimraf dist/system && node-sass src --output dist/system && postcss --use autoprefixer dist/system/*.css -d dist/system",
     "build:system": "cross-env tsc --project tsconfig.build.json --outDir dist/system --module system",
     "postbuild:system": "cross-env copyfiles --up 1 src/**/*.html src/**/*.css dist/system",
     "prebuild": "cross-env rimraf dist",
-    "build": "concurrently \"npm run build:amd\" \"npm run build:commonjs\" \"npm run build:es2015\" \"npm run build:system\""
+    "build": "concurrently \"npm run build:amd\" \"npm run build:commonjs\" \"npm run build:es2015\" \"npm run build:system\"",
+    "changelog": "cross-env conventional-changelog -p angular -i doc/CHANGELOG.md -s",
+    "bump-version": "npm --no-git-tag-version version",
+    "preprepare-release": "cross-env npm run test",
+    "prepare-release": "cross-env npm run changelog && npm run build"
   },
   "repository": {
     "type": "git",
@@ -79,7 +86,7 @@
   },
   "dependencies": {
     "aurelia-binding": "^1.1.1",
-    "aurelia-dependency-injection": "^1.2.1",
+    "aurelia-dependency-injection": "^1.3.0",
     "aurelia-event-aggregator": "^1.0.1",
     "aurelia-framework": "^1.0.8",
     "aurelia-loader": "^1.0.0",
@@ -92,29 +99,30 @@
     "aurelia-templating-binding": "^1.2.0"
   },
   "devDependencies": {
-    "@types/jasmine": "^2.5.40",
-    "@types/node": "^7.0.0",
+    "@types/jasmine": "^2.5.43",
+    "@types/node": "^7.0.5",
     "aurelia-bootstrapper": "^1.0.1",
     "aurelia-pal-browser": "^1.1.0",
     "aurelia-polyfills": "^1.1.1",
     "aurelia-testing": "^1.0.0-beta.2.0.1",
-    "autoprefixer": "^6.6.1",
+    "autoprefixer": "^6.7.3",
     "concurrently": "^2.2.0",
-    "copyfiles": "^1.0.0",
+    "conventional-changelog-cli": "^1.2.0",
+    "copyfiles": "^1.2.0",
     "cross-env": "^2.0.1",
     "jasmine-core": "^2.5.2",
-    "karma": "^1.3.0",
+    "karma": "^1.4.1",
     "karma-chrome-launcher": "^2.0.0",
     "karma-ie-launcher": "^1.0.0",
     "karma-jasmine": "^1.1.0",
     "karma-requirejs": "^1.1.0",
-    "node-sass": "^4.2.0",
+    "node-sass": "^4.5.0",
     "postcss-cli": "^2.6.0",
     "requirejs": "^2.3.2",
     "requirejs-text": "^2.0.15",
     "rimraf": "^2.5.4",
     "tslint": "^3.15.1",
-    "typescript": "^2.1.4"
+    "typescript": "^2.2.0"
   },
   "aurelia": {
     "build": {
