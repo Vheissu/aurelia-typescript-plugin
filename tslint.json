@@ -6,8 +6,6 @@
     "whitespace": [true, "check-branch", "check-decl", "check-operator", "check-module", "check-separator", "check-type"],
     "interface-name": [true, "never-prefix"],
     "no-shadowed-variable": false,
-    "no-string-literal": false,
-    "trailing-comma": false,
-    "member-ordering": ["fields-first"]
+    "no-string-literal": false
   }
 }
