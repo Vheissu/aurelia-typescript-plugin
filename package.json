@@ -8,14 +8,14 @@
     "aurelia"
   ],
   "main": "index.bundle.js",
-  "jsnext:main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig-esm.json && rollup -c rollup.config.js dist/index.js > dist/index.bundle.js && cp package.json dist && ts-node tools/cleanup.ts && cp README.md dist",
     "lint": "tslint -c tslint.json src/**/*.ts test/**/*.ts",
     "test": "mocha --require ts-node/register test/**/*.spec.ts --recursive",
-    "test:watch": "mocha -w --require ts-node/register test/**/*.spec.ts --recursive"
+    "test:watch": "mocha -w --require ts-node/register test/**/*.spec.ts --recursive",
+    "publish": "cd dist && npm publish"
   },
   "repository": {
     "type": "git",
@@ -32,7 +32,11 @@
     "@types/mocha": "^2.2.41",
     "@types/node": "^8.0.9",
     "chai": "^4.0.2",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^7.0.0",
     "mocha": "^3.4.2",
+    "postcss-cssnext": "^3.0.0",
+    "postcss-import": "^10.0.0",
     "rimraf": "^2.6.1",
     "rollup": "^0.43.0",
     "rollup-plugin-commonjs": "^8.0.2",
@@ -43,5 +47,8 @@
     "tslint": "^5.5.0",
     "typescript": "^2.4.1",
     "uglify-js": "^3.0.24"
+  },
+  "dependencies": {
+    "aurelia-framework": "^1.1.2"
   }
 }

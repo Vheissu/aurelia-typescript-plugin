@@ -8,14 +8,21 @@
     "stripInternal": true,
     "declaration": true,
     "outDir": "./dist",
-    "lib": ["es2015", "dom"],
+    "lib": ["es5", "es2015", "dom"],
     "types": [
       "node",
       "mocha",
       "chai"
     ]
   },
-  "files": [
-    "./src/index.ts"
+  "include": [
+    "src/**/*.ts",
+    "tools/**.ts"
+  ],
+  "exclude": [
+    ".vscode",
+    "dist",
+    "doc",
+    "node_modules"
   ]
 }
