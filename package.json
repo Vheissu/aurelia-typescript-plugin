@@ -13,7 +13,7 @@
   "types": "index.d.ts",
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig-esm.json && rollup -c rollup.config.js dist/index.js > dist/index.bundle.js && cp package.json dist && ts-node tools/cleanup.ts && cp README.md dist",
-    "lint": "tslint -c tslint.json lib/**/*.ts test/**/*.ts",
+    "lint": "tslint -c tslint.json src/**/*.ts test/**/*.ts",
     "test": "mocha --require ts-node/register test/**/*.spec.ts --recursive",
     "test:watch": "mocha -w --require ts-node/register test/**/*.spec.ts --recursive"
   },
