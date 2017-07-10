@@ -1,10 +1,6 @@
-import { configure } from '../../src/index';
-
-describe('Index', () => {
-    let sut;
-
+describe('Placeholder test', () => {
     beforeEach(() => {
-        sut = configure();
+
     });
 
     it('Placeholder test', () => {
