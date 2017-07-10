@@ -6,12 +6,6 @@ gulp.task("copy:html", function() {
     .pipe(gulp.dest("dist"));
 });
 
-gulp.task("copy:css", function() {
-  return gulp.src("src/**/*.css")
-    .pipe(postcss())
-    .pipe(gulp.dest("dist"));
-});
-
 gulp.task("copy:json", function() {
   return gulp.src("src/**/*.json")
     .pipe(gulp.dest("dist"));
