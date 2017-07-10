@@ -1,5 +1,5 @@
 node_modules
 dist/
 test/coverage-jest/
-
+coverage/
 \.idea/
