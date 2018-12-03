@@ -1,28 +1,17 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "target": "es5",
-    "lib": [
-      "es2017",
-      "dom"
-    ],
-    "outDir": "dist/commonjs",
-    "noImplicitAny": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "strictNullChecks": true,
-    "declaration": true,
-    "forceConsistentCasingInFileNames": true,
-    "experimentalDecorators": true,
-    "noEmitHelpers": false
-  },
-  "exclude": [
-    ".vscode",
-    "dist",
-    "doc",
-    "node_modules",
-    "test"
-  ]
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "noEmitHelpers": false,
+        "stripInternal": true,
+        "declaration": true,
+        "outDir": "dist/commonjs",
+        "lib": ["esnext", "dom"]
+    },
+    "include": ["src"],
+    "exclude": ["node_modules", ".vscode", "dist"]
 }
