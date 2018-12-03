@@ -7,10 +7,10 @@
         "plugin",
         "aurelia"
     ],
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
+    "main": "dist/commonjs/index.js",
+    "types": "dist/commonjs/index.d.ts",
     "files": [
-        "lib/**/*"
+        "dist/**/*"
     ],
     "scripts": {
         "prepare": "npm run-script build",
@@ -18,8 +18,13 @@
         "preversion": "npm run-script lint",
         "version": "npm run-script format && git add -A src",
         "postversion": "git push && git push --tags",
-        "prebuild": "rimraf lib && gulp",
-        "build": "tsc",
+        "prebuild": "rimraf dist && gulp",
+        "build": "concurrently \"npm run build:amd\" \"npm run build:commonjs\" \"npm run build:es2015\" \"npm run build:native-modules\" \"npm run build:system\"",
+        "build:amd": "tsc --project tsconfig.build.json --outDir dist/amd --module amd",
+        "build:commonjs": "tsc --project tsconfig.build.json --outDir dist/commonjs --module commonjs",
+        "build:system": "tsc --project tsconfig.build.json --outDir dist/system --module system",
+        "build:es2015": "tsc --project tsconfig.build.json --outDir dist/es2015 --module es2015 --target es2015",
+        "build:native-modules": "tsc --outDir dist/native-modules --module es2015",
         "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
         "lint": "tslint -p tsconfig.json",
         "test": "jest --config jestconfig.json"
@@ -39,6 +44,7 @@
         "@types/node": "^10.12.11",
         "aurelia-pal-nodejs": "^1.0.0-beta.1.0.0",
         "aurelia-testing": "^1.0.0-beta.3.0.1",
+        "concurrently": "^4.1.0",
         "gulp": "^3.9.1",
         "jest": "^23.6.0",
         "prettier": "^1.15.3",
@@ -52,5 +58,14 @@
         "aurelia-framework": "^1.1.2",
         "aurelia-loader-webpack": "^2.2.1",
         "aurelia-polyfills": "^1.2.2"
+    },
+    "jspm": {
+        "registry": "npm",
+        "main": "index",
+        "format": "cjs",
+        "directories": {
+            "dist": "dist/commonjs"
+        },
+        "devDependencies": {}
     }
 }

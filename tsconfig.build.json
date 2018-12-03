@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "noEmitHelpers": false,
+        "stripInternal": true,
+        "declaration": true,
+        "outDir": "dist/commonjs",
+        "lib": ["esnext", "dom"]
+    },
+    "exclude": ["node_modules", ".vscode", "dist", "**/__tests__/*"]
+}

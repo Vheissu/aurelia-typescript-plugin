@@ -1,4 +1,3 @@
-import { FrameworkConfiguration } from 'aurelia-framework';
 import { configure } from '../src/index';
 
 describe('Index', () => {

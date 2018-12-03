@@ -6,11 +6,12 @@
         "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
+        "noEmitHelpers": false,
         "stripInternal": true,
         "declaration": true,
-        "outDir": "./lib",
-        "lib": ["es5", "esnext", "dom"]
+        "outDir": "dist/commonjs",
+        "lib": ["esnext", "dom"]
     },
     "include": ["src"],
-    "exclude": ["node_modules", "**/__tests__/*"]
+    "exclude": ["node_modules", ".vscode", "dist"]
 }
